@@ -81,7 +81,7 @@ pipeline{
                     withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]){
 
                     sh "git push https://github.com/khsr25/gitops_argocd_project.git main"  
-                    }
+                  }
                 }
             }
         }
