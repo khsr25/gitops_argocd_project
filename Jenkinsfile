@@ -3,7 +3,6 @@ pipeline{
     agent any 
 
     environment{
-
         DOCKERHUB_USERNAME = "khsr25"
         APP_NAME ="gitops-argo-app"
         IMAGE_TAG ="${BUILD_NUMBER}"
@@ -22,14 +21,11 @@ pipeline{
                 }
             }
         }
-        stage('Checkout SCM') {
-
+        stage('Checkout SCM'){
             steps{
-                script{
-                    git credentialsId: 'github',
-                    url: 'https://github.com/khsr25/gitops_argocd_project.git',
-                    branch: 'main'
-                }
+                git credentialsId: 'github',
+                url: 'https://github.com/khsr25/gitops_argocd_project.git',
+                branch: 'main'
             }
         }
     }
