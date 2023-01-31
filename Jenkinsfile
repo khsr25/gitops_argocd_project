@@ -77,11 +77,11 @@ pipeline{
                       git config --global user.email "khsr25@gmail.com"
                       git add deployment.yml
                       git commit -m "updated the deployment file"
-                      """
-                      withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]){
+                    """
+                    withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
 
-                      sh "git push https://github.com/khsr25/gitops_argocd_project.git main"  
-                      }
+                    sh 'git push https://github.com/khsr25/gitops_argocd_project.git main'  
+                    }
                 }
             }
         }
